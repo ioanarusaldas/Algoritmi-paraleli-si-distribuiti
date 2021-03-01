@@ -1,0 +1,41 @@
+Savu Ioana Rusalda - Tema1
+
+	Algoritm Julia
+
+	Pentru paralelizarea algoritmului julia am impartit numarul de iteratii din
+for-ul ce parcurge latimea egal numarului de threaduri pe care se paralelizea-
+za.Am folosit formulele din laborator:
+
+	int start = ID * (double)N / P;
+	int end = min((ID + 1) * (double)N / P, N);
+
+	Intre alcatuirea matricei si transformarea in coordonate ecram am adaguat
+o bariera pentru a ma asigura ca toate threadurile au calculat matricea, 
+inainte de a o reprezenta.
+
+	Pentru paralelizarea transformarii in coordonate ecran am recalculat 
+intervalele oentru fiecare thread.
+
+	Algoritm Mendelbrot
+
+	Asemanator algoritmului anterior, am impartit for-ul, de aceasta data, 
+corespunzator parcurgerii in inaltime egal in functie de numarul de threaduri.
+
+	Intre alcatuirea matricei si transformarea in coordonate ecram am adaguat
+o bariera. Pentru reprezentarea in coordonate ecran am recalculat intervalele.
+
+	thread_function
+		In aceasta functie am ales ca thread-ul cu id-ul 0 sa realizeze 
+operatiile de citire/scriere, alocare/dezalocare deoarece nu era necesar ca 
+ca fiecare thread sa faca asta.
+	Pentru a evita cazul in care alt thread ajunge inaintea thread-ului 0, si
+ar aplica algoritmul fara a citi parametrii initiali si fara a aloca, am pus o 
+bariera inainte de rularea algoritmilor.
+	De asemenea, am adaugat o bariera dupa rularea algoritmului pentru a ma 
+asigura ca toate threadurile au terminat rularea algoritmului inainte de 
+dezalocare. 
+	Identic am procedat pentru citirea parametrilor algoritmului mendelbrot.
+
+
+
+
