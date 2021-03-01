@@ -35,7 +35,8 @@ depasi numarul de masini permise in intersectie.
 
 Cerinta 3: simple_strict_1_car_roundabout
 ****************************************
-Pentru a permite accesul unei singure masini de pe fiecare sens am creat un vector de semafoare, initializand fiecare semafor cu 1.
+Pentru a permite accesul unei singure masini de pe fiecare sens am creat un vector de 
+semafoare, initializand fiecare semafor cu 1.
 	Fiecare masina va accesa semaforul corespunzator liniei de pe care a venit,
 fiind permisa astfel intrarea unei singure masini in intersectie.
 
